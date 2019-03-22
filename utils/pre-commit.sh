@@ -2,8 +2,12 @@
 
 echo pre-commit RUNNING
 
-if [ git diff --exit-code slides/slides.html ]; then
- echo slides.html has been COPIED 
+CMD=$(git status slides/slides.html -s)
+STATUS="${CMD:0:2}"
+
+if [ "$STATUS" == "M " ] 
+then
+ echo slides.html staged to be COPIED 
  touch .commit 
  exit
 else
