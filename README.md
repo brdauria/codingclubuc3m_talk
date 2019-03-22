@@ -18,3 +18,4 @@ Then, depending on time, it will address stylistic issues and/or advanced conten
 - tidyverse and blogdown packages for R, better to have also installed the [RStudio](https://www.rstudio.com/) IDE
 - a free account on [GitHub](https://github.com/)
 - the [Jekyll](https://jekyllrb.com/docs/installation/) static website generator
+
