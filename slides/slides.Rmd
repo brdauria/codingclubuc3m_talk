@@ -1,7 +1,7 @@
 ---
 title: "Blogging with R"
 author: "Bernardo D'Auria"
-date: "3/22/2019"
+date: "Tuesday March 26th, 2019"
 output: ioslides_presentation
 ---
 
@@ -9,19 +9,311 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown prova
+## What is a Blog?
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Definition of blog
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+A blog (shortening of **weblog**) is an online journal or informational website displaying information in the reverse chronological order, with latest posts appearing first. 
 
-## Slide with Bullets
+It is a platform where a writer or even a group of writers share their views on an individual subject.
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-## Slide with R Output
+### Famous blog platforms: 
+
+[WordPress.org](http://wordpress.org/), 
+[Ghost](https://ghost.org/), 
+[Drupal](http://www.drupal.org/), 
+[Joomla](https://www.joomla.org/), 
+[Wordpress.com](http://wordpress.com/), 
+[Medium](http://medium.com/),
+[Squarespace](https://www.squarespace.com/), 
+[Weebly](https://www.weebly.com/), 
+[Typepad](http://www.typepad.com/), 
+[Blogger](https://www.blogger.com/), 
+[Tumblr](http://tumblr.com/) and 
+[Wix](https://www.wix.com/)
+
+<sub  style="display: block; text-align: right">
+  [source (2019)](https://makeawebsitehub.com/choose-right-blogging-platform/)
+</sub>
+
+## The requisites of our blog
+
+Out aim is to crate a simple blog by the following collection of tools:
+
+- [R](https://www.r-project.org/) + [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
+
+- [RStudio](https://www.rstudio.com/) + [blogdown](https://bookdown.org/yihui/blogdown/)
+
+- [GitHub](https://github.com/)
+
+- [Jekyll](https://jekyllrb.com/) + [GitHub Pages](https://pages.github.com/)
+
+This will allow us to:
+
+- **do not** need a personal web server
+
+- easily include **formulas** and **statistical plot**  
+    in our blog posts.
+    
+## R Markdown
+
+**R Markdown** is a file format to make dynamic documents in **R**. 
+
+An R Markdown document is written in   
+**markdown** (an easy-to-write plain text format)   
+and contains chunks of **embedded R code**.
+
+### Example:
+<ul>
+  ````markdown
+    # Plotting a simple Histogram 
+    
+    We generate a number `n=50` of 
+    **Normal** disributed random variables 
+    and plot them as an histogram
+    
+    ```{r}`r ''`
+     hist(rnorm(50))
+    ```   
+  ````
+</ul>
+    
+## Plotting a simple Histogram 
+
+We generate a number `n=50` of 
+**Normal** disributed random variables 
+and plot them as an histogram
+
+```{r}
+ hist(rnorm(50))
+```  
+
+## blogdown + RStudio
+
+`blogdown` is a package in R, developed by Yihui Xie (also author of `knitr`), that facilitates to build blogs with **R Markdown** in RStudio.
+
+It is mainly tailored for the static generator **Hugo**, but following the author of the package, we tweak it to make it work with the static generator **Jekyll**.
+
+
+### Book published on 2017: 
+
+["blogdown: Creating Websites with R Markdown"](https://www.crcpress.com/blogdown-Creating-Websites-with-R-Markdown/Xie-Hill-Thomas/p/book/9780815363729)  
+      by Y. Xie, A. P. Hill, A. Thomas
+      
+it is also available [on-line ](https://bookdown.org/yihui/blogdown/)
+
+
+## GitHub
+
+- Create a repository, for example name it `my_blog`,  
+   and **initialize** it with a `README.md`
+
+- Go to `Settings -> GitHub Pages`
+    - set **Source** to **master branch**
+    - select a **Jekyll theme**, for example to **Minimal**
+  
+- Edit your repository in the **main** page  
+   and set its **website link**
+
+## Associate RStudio with Github
+
+- First download and install    [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for:
+[Linux](https://git-scm.com/download/linux), 
+[Mac](http://git-scm.com/download/mac") or
+[Windows](https://gitforwindows.org/)
+
+- Then enable version control in RStudio 
+     by going to  
+    `Tools -> Global Options... -> Git/SVN`
+
+- There write the location of the `git` executable
+
+- Then `Create RSA key...` 
+    or select one if you already have them.
+
+- Then open the **Terminal**
+   by going to  
+   `Tools -> Shell...`
+
+- and enter your details for your commits
+
+    ```bash
+    git config --global user.email "my.email@university.edu"
+    git config --global user.name "my.username"
+    ```
+    
+## Create a new RStudio project
+
+- `File -> New Project... -> Version Control -> Git`
+- Type the `url` of your GitHub repository
+- Select a name and a location for your RStudio project 
+
+
+Then
+
+- assure to have the package `blogdown` installed
+
+  ```r
+  ## Install from CRAN
+  install.packages("blogdown")
+  ## Or, install from GitHub
+  if (!requireNamespace("devtools")) install.packages("devtools")
+  devtools::install_github("rstudio/blogdown")
+  ```
+
+## Configuring Jekyll on GitHub Pages
+
+- Set the file content `_config.yml` as follows
+
+  ```yaml
+  title: My first blog
+  description: >- # this means to ignore newlines until "email:"
+    "This blog has been creatged during the mini-course 
+    'Blogging with R' by Bernardo D'Auria on Tue March 26th, 2019"
+  email: my.email@university.edu
+
+  # Build settings
+  markdown: kramdown
+  exclude: ['*.Rmd'] 
+  theme: minima
+  plugins:
+    - jekyll-feed # to serve posts
+  ```
+  
+  - Create the folder `_posts` 
+  
+## Configuring Jekyll on GitHub Pages
+
+- Create the file `Gemfile`
+
+  ```yaml
+  source "https://rubygems.org"
+  
+  # To upgrade, run `bundle update github-pages`.
+  gem "github-pages", group: :jekyll_plugins
+  
+  group :jekyll_plugins do
+    gem "jekyll-feed"
+  end
+  ```
+  
+- Add to `.gitignore`
+  ```bash
+  _site/
+  .sass-cache/
+  .jekyll-cache/
+  .jekyll-metadata
+  ```
+
+## Adding an `index.html` page
+
+- Create the file `index.Rmd`  
+
+  ````md
+     ---
+      layout: home
+      title: "Welcome to my Blog"
+     ---
+      
+      ```{r, echo=FALSE}`r ''`
+      library(ggplot2)
+      
+      ## Plot
+      g <- ggplot(mpg, aes(cty))
+      g + geom_density(aes(fill=factor(cyl)), alpha=0.8) + 
+          labs(title="Density plot", caption="Source: mpg", 
+               x="City Mileage", fill="# Cylinders")
+      ```
+      
+  ````
+  
+- Run `knitr::knit('index.Rmd')`
+
+## Making our first post
+
+- Create the file `_posts/2019-03-01-HelloWorld.Rmd`  
+
+  ````markdown
+      ---
+      title: "Hello World!"
+      author: "Bernardo D'Auria"
+      date: "2019-03-01"
+      ---
+      Let us sum `1+1` by **R**.
+      
+      ```{r}`r ''`
+      1+1
+      ```
+      
+  ````
+- Run  
+
+  ```r
+    setwd('_posts/'); 
+    knitr::knit('2019-03-17-HelloPage.Rmd'); setwd('..');
+  ```
+
+## The blog works!
+
+- `Commit` and `Push`
+
+Now going to the url of the **GitHub Pages** of our repository,
+
+the blog <font color='red'>WORKS!</font>
+
+### To run it locally:
+
+You need to have **Jekyll** installed
+
+- run `bundle install`  
+- run `jekyll serve` 
+- open in the browser the url `http://127.0.0.1:4000/`
+
+## Jekyll
+
+`Jekyll` is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. 
+
+Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories. 
+
+- to install Jekyll see the instructions for different platforms  [here](https://jekyllrb.com/docs/installation/)
+
+- Jekyll may require to download and install a more recent version of [Ruby language](https://www.ruby-lang.org/en/downloads/)
+
+
+
+## Jekyll as generator for blogdown
+
+- create an hidden file `.Rprofile` in the RStudio project directory  
+
+   ```bash
+   options(
+     blogdown.generator = 'jekyll', blogdown.method = 'custom',
+     blogdown.subdir = '_posts', servr.daemon = TRUE
+   )
+   ```
+
+- Add to the configuration file `_config.yml` the following line:  
+
+   ```bash
+   exclude: ['*.Rmd']  
+   ```
+  
+- create a new folder `R` containing the files  
+    [`build.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build.R) and 
+    [`build_one.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build_one.R)
+
+They can be dowloaded from [yihui/blogdown-jekyll](https://github.com/yihui/blogdown-jekyll) repository
+
+
+## Content of `build.R`
+
+```r
+
+```
+
+## Content of `build_one.R`
+
 
 ```{r cars, echo = TRUE}
 summary(cars)
