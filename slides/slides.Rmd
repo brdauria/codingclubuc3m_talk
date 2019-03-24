@@ -45,7 +45,7 @@ Out aim is to crate a simple blog by the following collection of tools:
 
 - [RStudio](https://www.rstudio.com/) + [blogdown](https://bookdown.org/yihui/blogdown/)
 
-- [GitHub](https://github.com/)
+- [git](https://git-scm.com/downloads) + [GitHub](https://github.com/)
 
 - [Jekyll](https://jekyllrb.com/) + [GitHub Pages](https://pages.github.com/)
 
@@ -288,7 +288,7 @@ in the blog's root folder
 
 ## Jekyll as generator for blogdown
 
-- create an hidden file `.Rprofile` in the RStudio project directory  
+- create the hidden file `.Rprofile` in the project directory  
 
    ```bash
    options(
@@ -297,17 +297,18 @@ in the blog's root folder
    )
    ```
 
-- Add to the configuration file `_config.yml` the following line:  
-
-   ```bash
-   exclude: ['*.Rmd']  
-   ```
-  
-- create a new folder `R` containing the files  
+- create a new folder, name it `R`, containing two files:  
     [`build.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build.R) and 
     [`build_one.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build_one.R)
 
-They can be dowloaded from [yihui/blogdown-jekyll](https://github.com/yihui/blogdown-jekyll) repository
+  They can be dowloaded by clicking on their links or direclty from [yihui/blogdown-jekyll](https://github.com/yihui/blogdown-jekyll) repository
+  
+- make `sw/hd link `config.yaml` to `_config.yml`
+
+  ```bash
+  ln -s _config.yml config.yaml # on MAC/Linux
+  mklink config.yaml _config.yml # on Windows
+  ```
 
 ## Working with Themes
 
