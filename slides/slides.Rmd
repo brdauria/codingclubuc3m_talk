@@ -180,8 +180,8 @@ Then
   plugins:
     - jekyll-feed # to serve posts
   ```
-  
-  - Create the folder `_posts` 
+
+- Create the folder `_posts` 
   
 ## Configuring Jekyll on GitHub Pages
 
