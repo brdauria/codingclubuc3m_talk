@@ -159,7 +159,7 @@ Then
   install.packages("blogdown")
   ## Or, install from GitHub
   if (!requireNamespace("devtools")) install.packages("devtools")
-  devtools::install_github("rstudio/blogdown")
+  devtools::install_github("brdauria/blogdown")
   ```
 
 ## Configuring Jekyll on GitHub Pages
