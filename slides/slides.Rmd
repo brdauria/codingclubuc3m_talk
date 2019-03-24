@@ -251,7 +251,7 @@ Then
 
   ```r
     setwd('_posts/'); 
-    knitr::knit('2019-03-17-HelloPage.Rmd'); setwd('..');
+    knitr::knit('2019-03-01-HelloWorld.Rmd'); setwd('..');
   ```
 
 ## The blog works!
