@@ -175,7 +175,7 @@ Then
 
   # Build settings
   markdown: kramdown
-  exclude: ['*.Rmd'] 
+  exclude: ['*.Rmd'] # this is important to use with RMarkdown
   theme: minima
   plugins:
     - jekyll-feed # to serve posts
@@ -276,11 +276,15 @@ You need to have **Jekyll** installed
 
 Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories. 
 
-- to install Jekyll see the instructions for different platforms  [here](https://jekyllrb.com/docs/installation/)
+- find [here](https://jekyllrb.com/docs/installation/)
+  the instructions to install for different platforms
 
-- Jekyll may require to download and install a more recent version of [Ruby language](https://www.ruby-lang.org/en/downloads/)
+- it may require to download and install a more recent version of [Ruby language](https://www.ruby-lang.org/en/downloads/)
 
+### Example in class: 
 
+run `jekyll new . --force`
+in the blog's root folder
 
 ## Jekyll as generator for blogdown
 
@@ -305,23 +309,69 @@ Jekyll is the engine behind GitHub Pages, which you can use to host sites right 
 
 They can be dowloaded from [yihui/blogdown-jekyll](https://github.com/yihui/blogdown-jekyll) repository
 
+## Working with Themes
 
-## Content of `build.R`
+**Jekyll** is very powerful for   
+- its modularity  
+- its themes  
 
-```r
+However this has a _cost_:  
+**things may work slightly different from _theme_ to _theme_**
 
-```
-
-## Content of `build_one.R`
+therefore there is some **extra work** to do!
 
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme
 
-## Slide with Plot
+## Minimal Mistakes theme
 
-```{r pressure}
-plot(pressure)
-```
+- remove `index.md` and write `index.html` as follows:
+  ````yaml
+     ---
+      layout: home
+      author_profile: true
+     ---
+  ````
+
+- add to `Gemfile`  
+  ````yaml
+     group :jekyll_plugins do
+      ...
+      gem "jekyll-include-cache"
+    end
+  ````
+  
+## Minimal Mistakes theme
+
+- add to `_config.yml` this
+  ````yaml
+     github: [metadata] # important to use remote_theme
+     minimal_mistakes_skin: dark
+     remote_theme: "mmistakes/minimal-mistakes@4.15.2"
+     paginate: 5
+     plugins:
+      ...
+      - jekyll-paginate
+  ````
+
+## Minimal Mistakes theme
+
+- add to `_config.yml` and this
+  ````yaml
+      # Front Matter Defaults:
+      defaults:
+        # _posts
+        - scope:
+            path: ""
+            type: posts
+          values:
+            layout: single
+            author_profile: true
+            read_time: true
+            comments: true
+            share: true
+            related: true
+  ````
+
+- then `Commit` and `Push`
 
