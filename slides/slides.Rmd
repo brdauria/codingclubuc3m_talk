@@ -104,7 +104,7 @@ It is mainly tailored for the static generator **Hugo**, but following the autho
 it is also available [on-line ](https://bookdown.org/yihui/blogdown/)
 
 
-## GitHub
+## git + GitHub
 
 - Create a repository, for example name it `my_blog`,  
    and **initialize** it with a `README.md`
@@ -115,13 +115,16 @@ it is also available [on-line ](https://bookdown.org/yihui/blogdown/)
   
 - Edit your repository in the **main** page  
    and set its **website link**
+   
+To manipulate locally repositories from your coputer,
+you need to download and istall [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+- [Linux](https://git-scm.com/download/linux)  
+- [Mac](http://git-scm.com/download/mac")   
+- [Windows](https://gitforwindows.org/)  
+
 
 ## Associate RStudio with Github
-
-- First download and install    [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for:
-[Linux](https://git-scm.com/download/linux), 
-[Mac](http://git-scm.com/download/mac") or
-[Windows](https://gitforwindows.org/)
 
 - Then enable version control in RStudio 
      by going to  
@@ -162,7 +165,7 @@ Then
   devtools::install_github("brdauria/blogdown")
   ```
 
-## Configuring Jekyll on GitHub Pages
+## Configure for Jekyll on GitHub Pages
 
 - Set the file content `_config.yml` as follows
 
@@ -183,7 +186,7 @@ Then
 
 - Create the folder `_posts` 
   
-## Configuring Jekyll on GitHub Pages
+## Configure for Jekyll on GitHub Pages
 
 - Create the file `Gemfile`
 
@@ -206,7 +209,7 @@ Then
   .jekyll-metadata
   ```
 
-## Adding an `index.html` page
+## Add an `index.html` page
 
 - Create the file `index.Rmd`  
 
@@ -230,7 +233,7 @@ Then
   
 - Run `knitr::knit('index.Rmd')`
 
-## Making our first post
+## Make your first post
 
 - Create the file `_posts/2019-03-01-HelloWorld.Rmd`  
 
@@ -250,8 +253,8 @@ Then
 - Run  
 
   ```r
-    setwd('_posts/'); 
-    knitr::knit('2019-03-01-HelloWorld.Rmd'); setwd('..');
+    owd = setwd('_posts/'); 
+    knitr::knit('2019-03-01-HelloWorld.Rmd'); setwd(owd);
   ```
 
 ## The blog works!
@@ -267,7 +270,7 @@ the blog <font color='red'>WORKS!</font>
 You need to have **Jekyll** installed
 
 - run `bundle install`  
-- run `jekyll serve` 
+- run `bundle exec jekyll serve` 
 - open in the browser the url `http://127.0.0.1:4000/`
 
 ## Jekyll
@@ -286,7 +289,7 @@ Jekyll is the engine behind GitHub Pages, which you can use to host sites right 
 run `jekyll new . --force`
 in the blog's root folder
 
-## Jekyll as generator for blogdown
+## Make Jekyll the generator for blogdown
 
 - create the hidden file [`.Rprofile`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/.Rprofile) in the project directory  
 
@@ -299,11 +302,16 @@ in the blog's root folder
    )
    # IMPORTANT: please leave this comment line!
    ```
+  
+## Make Jekyll the generator for blogdown
 
 - create a new folder, name it `R`, containing two files:  
-      [`build.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build.R) and 
-    [`build_one.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build_one.R)  
-  click on them or look at [brdauria/blogdown-jekyll](https://github.com/brdauria/blogdown-jekyll) repository
+      - [`build.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build.R)  
+      - [`build_one.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build_one.R)
+      
+  You can download them by clicking on them   
+  or you can look for them in the `R` directory in
+  the [brdauria/blogdown-jekyll](https://github.com/brdauria/blogdown-jekyll) repository
   
 - make `sw/hd` link `config.yaml` to `_config.yml`
 
@@ -311,6 +319,62 @@ in the blog's root folder
   ln -s _config.yml config.yaml # on MAC/Linux
   mklink config.yaml _config.yml # on Windows
   ```
+  
+## Make your second post
+
+- Select in the toolbar `Addins -> New Post`  
+- Type the following informations
+  
+  ```yaml
+  Title:    "Hello Jekyll!"
+  Author:   "Bernardo D'Auria"
+  Date:     2019-03-05
+  Category: graphs
+  Format:   R Markdown (.Rmd)
+  ```
+- Click on `Done` 
+
+A new file named `2019-03-25-hello-jekyll.Rmd`   
+will be added in the `_posts` directory  
+and it will be opened for modifications.
+
+## Make your second post
+
+- Modify the YAML header of the post as follows 
+
+  ````yaml
+  ---
+  title: Hello Jekyll!
+  author: "Bernardo D'Auria"
+  date: '2019-03-05'
+  slug: hello-jekyll
+  categories:
+    - graphs
+  tags: []
+  
+  layout: posts
+  ---
+  ````
+  
+## Make your second post
+
+- and the body as the following
+
+  ````r
+  This is my first plot that cointains an R graph
+  
+  ```{r}`r ''`
+  library(ggplot2)
+  ggplot(iris,aes(x=Sepal.Width,y=Sepal.Length)) + geom_point()
+  ```
+  
+  and an external picture
+  
+  ![colored cats](https://goo.gl/TRS6bL)
+  
+  ```
+  ````
+
 
 ## Working with Themes
 
