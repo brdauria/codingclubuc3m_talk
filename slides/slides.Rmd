@@ -288,22 +288,23 @@ in the blog's root folder
 
 ## Jekyll as generator for blogdown
 
-- create the hidden file `.Rprofile` in the project directory  
+- create the hidden file [`.Rprofile`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/.Rprofile) in the project directory  
 
    ```bash
    options(
-     blogdown.generator = 'jekyll', blogdown.method = 'custom',
-     blogdown.subdir = '_posts', servr.daemon = TRUE
+      blogdown.generator = 'jekyll', blogdown.method = 'custom',
+      blogdown.subdir = '_posts', servr.daemon = TRUE,
+      blogdown.base.dir = 'assets/figures/', blogdown.base.url = '{{ site.baseurl }}/assets/figures/'
    )
+   # IMPORTANT: please leave this comment line!
    ```
 
 - create a new folder, name it `R`, containing two files:  
-    [`build.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build.R) and 
-    [`build_one.R`](https://raw.githubusercontent.com/yihui/blogdown-jekyll/gh-pages/R/build_one.R)
-
-  They can be dowloaded by clicking on their links or direclty from [yihui/blogdown-jekyll](https://github.com/yihui/blogdown-jekyll) repository
+    [`build.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build.R) and 
+    [`build_one.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build_one.R)  
+  click on them or look at [brdauria/blogdown-jekyll](https://github.com/brdauria/blogdown-jekyll) repository
   
-- make `sw/hd link `config.yaml` to `_config.yml`
+- make `sw/hd` link `config.yaml` to `_config.yml`
 
   ```bash
   ln -s _config.yml config.yaml # on MAC/Linux
