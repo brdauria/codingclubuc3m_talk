@@ -377,6 +377,24 @@ and it will be opened for modifications.
 
 you can download the file here [2019-03-05-hello-jekyll.md](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-05-hello-jekyll.md)
 
+## Make your second post
+
+- `build` and `serve your blog  
+  `Addins -> Serve Site` 
+ 
+   and in the `Viewer Pane`  
+   you should see your blog  
+   
+   WORKING with <font color='red'>PICTURES!</font>
+
+
+- `commit` and `push`  
+  
+  and you should see your blog also in   
+  
+  WORKING in <font color='red'>INTERNET!</font>
+
+
 ## Working with Themes
 
 **Jekyll** is very powerful for   
@@ -387,6 +405,7 @@ However this has a _cost_:
 **things may work slightly different from _theme_ to _theme_**
 
 therefore there is some **extra work** to do!
+
 
 
 We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme
