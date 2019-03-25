@@ -7,7 +7,7 @@ categories:
   - graphs
 tags: []
 
-layout: posts
+layout: post
 ---
 
 This is my first plot that cointains an R graph

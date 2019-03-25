@@ -3,6 +3,7 @@ title: "Blogging with R"
 author: "Bernardo D'Auria"
 date: "Tuesday March 26th, 2019"
 output: ioslides_presentation
+copyright: "@2019 Bernardo D'Auria"
 ---
 
 ```{r setup, include=FALSE}
@@ -233,7 +234,7 @@ Then
   
 - Run `knitr::knit('index.Rmd')`
 
-## Make your first post
+## Make your FIRST post
 
 - Create the file `_posts/2019-03-01-HelloWorld.Rmd`  
 
@@ -298,8 +299,9 @@ in the blog's root folder
       blogdown.generator = 'jekyll', blogdown.method = 'custom',
       blogdown.subdir = '_posts', servr.daemon = TRUE,
       blogdown.base.dir = 'assets/figures/', 
-      blogdown.base.url = '{{ site.baseurl }}/assets/figures/'
+      blogdown.base.url = '{{ site.assets }}/figures/'
    )
+   
    # IMPORTANT: please leave this comment line!
    ```
   
@@ -320,7 +322,7 @@ in the blog's root folder
   mklink config.yaml _config.yml # on Windows
   ```
   
-## Make your second post
+## Make your SECOND post
 
 - Select in the toolbar `Addins -> New Post`  
 - Type the following informations
@@ -334,11 +336,11 @@ in the blog's root folder
   ```
 - Click on `Done` 
 
-A new file named `2019-03-25-hello-jekyll.Rmd`   
+A new file named `2019-03-05-hello-jekyll.Rmd`   
 will be added in the `_posts` directory  
 and it will be opened for modifications.
 
-## Make your second post
+## Make your SECOND post
 
 - Modify the YAML header of the post as follows 
 
@@ -352,11 +354,11 @@ and it will be opened for modifications.
     - graphs
   tags: []
   
-  layout: posts
+  layout: post
   ---
   ````
   
-## Make your second post
+## Make your SECOND post
 
 - and the body as the following
 
@@ -377,7 +379,7 @@ and it will be opened for modifications.
 
 you can download the file here [2019-03-05-hello-jekyll.md](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-05-hello-jekyll.md)
 
-## Make your second post
+## Make your SECOND post
 
 - `build` and `serve your blog  
   `Addins -> Serve Site` 
@@ -490,23 +492,26 @@ So let us prepare our blog and make our **third post**!
 
 ## Customize the blog to allow <font color='red'>formulas</font>
 
-- in the folder `_include` create [`mathjax.html`]()
+- in the folder `_include` create [`mathjax.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_includes/mathjax.html)
 
   ```html
   {% if page.mathjax %}
-  <!-- https://docs.mathjax.org/en/latest/configuration.html#local-config-files -->
+  <!-- https://docs.mathjax.org/en/
+              latest/configuration.html#local-config-files -->
   <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML,https://idcrook.github.io/assets/js/MathJaxLocal.js">
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/
+               latest.js?config=TeX-AMS-MML_HTMLorMML,
+               {{ site.assets }}/js/MathJaxLocal.js">
   </script>
   {% endif %}
   ```
   
-- in the folder `assets/js` create [`MathJaxLocal.js`]()
+- in the folder `assets/js` create [`MathJaxLocal.js`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/assets/js/MathJaxLocal.js)
   
   
 ## Customize the blog to allow <font color='red'>formulas</font>
 
-- in the folder `_layout` create [`mpost.html`]()
+- in the folder `_layout` create [`mpost.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_layout/mpost.html)
 
   ```html
   ---
@@ -518,6 +523,64 @@ So let us prepare our blog and make our **third post**!
   
   {{ content }}
   ```
+  
+## Make your THIRD post
+
+- Select in the toolbar `Addins -> New Post`  
+- Type the following informations
+  
+  ```yaml
+  Title:    "Hello Math!"
+  Author:   "Bernardo D'Auria"
+  Date:     2019-03-15
+  Category: math
+  Format:   R Markdown (.Rmd)
+  ```
+- Click on `Done` 
+
+A new file named `2019-03-15-hello-math.Rmd`   
+will be added in the `_posts` directory  
+and it will be opened for modifications.
+
+## Make your THIRD post
+
+- Modify the YAML header of the post as follows 
+
+  ````yaml
+  ---
+  title: Hello Math!
+  author: "Bernardo D'Auria"
+  date: '2019-03-15'
+  slug: hello-math
+  categories:
+    - math
+  tags: []
+  
+  layout: mpost
+  ---
+  ````
+  
+## Make your THIRD post
+
+- and the body as the following
+
+  ```markdown
+  This is my first plot that cointains  
+  nice formulas
+
+  - like this 
+  \\( \sqrt{\frac{9}{4}} = \frac{3}{2} \\) 
+  
+  - and this
+  
+    $$ \int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2} $$
+  ```
+
+you can download the file here [2019-03-15-hello-jekyll.md](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-15-hello-jekyll.md)
+
+- see immediatelt the preview in the **Viewer Pane**  
+
+- `commit` and `push` to check it in Internet
 
 ## Working with Themes
 
