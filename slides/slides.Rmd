@@ -495,7 +495,7 @@ So let us prepare our blog and make our **third post**!
 - in the folder `_include` create [`mathjax.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_includes/mathjax.html)
 
   ```html
-  {% if page.mathjax %}
+  {% if layout.mathjax or page.mathjax %}
   <!-- https://docs.mathjax.org/en/
               latest/configuration.html#local-config-files -->
   <script type="text/javascript"
@@ -505,9 +505,15 @@ So let us prepare our blog and make our **third post**!
   </script>
   {% endif %}
   ```
+
+  It contains **Liquid templating** syntax!
+  See [here](https://jekyllrb.com/docs/liquid/) for more!
   
 - in the folder `assets/js` create [`MathJaxLocal.js`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/assets/js/MathJaxLocal.js)
   
+  ```
+  # TOO BIG to include here. Please click to download!
+  ```
   
 ## Customize the blog to allow <font color='red'>formulas</font>
 
