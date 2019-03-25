@@ -91,7 +91,7 @@ and plot them as an histogram
 
 ## blogdown + RStudio
 
-`blogdown` is a package in R, developed by Yihui Xie (also author of `knitr`), that facilitates to build blogs with **R Markdown** in RStudio.
+`blogdown` is a package in R, developed by *Yihui Xie* (also author of `knitr`), that facilitates to build blogs with **R Markdown** in RStudio.
 
 It is mainly tailored for the static generator **Hugo**, but following the author of the package, we tweak it to make it work with the static generator **Jekyll**.
 
