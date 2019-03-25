@@ -294,13 +294,14 @@ in the blog's root folder
    options(
       blogdown.generator = 'jekyll', blogdown.method = 'custom',
       blogdown.subdir = '_posts', servr.daemon = TRUE,
-      blogdown.base.dir = 'assets/figures/', blogdown.base.url = '{{ site.baseurl }}/assets/figures/'
+      blogdown.base.dir = 'assets/figures/', 
+      blogdown.base.url = '{{ site.baseurl }}/assets/figures/'
    )
    # IMPORTANT: please leave this comment line!
    ```
 
 - create a new folder, name it `R`, containing two files:  
-    [`build.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build.R) and 
+      [`build.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build.R) and 
     [`build_one.R`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/R/build_one.R)  
   click on them or look at [brdauria/blogdown-jekyll](https://github.com/brdauria/blogdown-jekyll) repository
   
