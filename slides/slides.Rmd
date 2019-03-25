@@ -298,11 +298,10 @@ in the blog's root folder
    options(
       blogdown.generator = 'jekyll', blogdown.method = 'custom',
       blogdown.subdir = '_posts', servr.daemon = TRUE,
-      blogdown.base.dir = 'assets/figures/', 
-      blogdown.base.url = '{{ site.assets }}/figures/'
-   )
-   
-   # IMPORTANT: please leave this comment line!
+      blogdown.base.dir = 'assets/figures/',
+      blogdown.base.url = '{{ "assets/figures/" | absolute_url }}'
+    )
+    # IMPORTANT: please leave this comment line!
    ```
   
 ## Make Jekyll the generator for blogdown
@@ -501,7 +500,7 @@ So let us prepare our blog and make our **third post**!
   <script type="text/javascript"
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/
                latest.js?config=TeX-AMS-MML_HTMLorMML,
-               {{ site.assets }}/js/MathJaxLocal.js">
+               {{ 'assets/js/MathJaxLocal.js' | absolute_url }}">
   </script>
   {% endif %}
   ```
@@ -591,14 +590,16 @@ you can download the file here [2019-03-15-hello-jekyll.md](https://raw.githubus
 ## Working with Themes
 
 **Jekyll** is very powerful for   
+
 - its modularity  
+
 - its themes  
 
 However this has a _cost_:  
-**things may work slightly different from _theme_ to _theme_**
 
+- **things may work slightly different from _theme_ to _theme_**
+  
 therefore there is some **extra work** to do!
-
 
 
 We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme
@@ -631,6 +632,7 @@ We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minima
      paginate: 5
      plugins:
       ...
+      - jekyll-include-cache
       - jekyll-paginate
   ````
 
@@ -654,4 +656,37 @@ We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minima
   ````
 
 - then `Commit` and `Push`
+
+## More resources
+
+**Jekyll**
+
+  - [docs](https://jekyllrb.com/docs/)  
+  
+  - [tutorials](https://jekyllrb.com/tutorials/home/)  
+  
+  - [themes](http://jekyllthemes.org/)
+
+online books  
+
+  - [R Mardown](https://bookdown.org/yihui/rmarkdown/): The Definitive Guide  
+  
+  - [blogdown](https://bookdown.org/yihui/blogdown/): Creating Websites with R Markdown
+
+## Thanks
+
+[**Coding Club**](https://codingclubuc3m.github.io) UC3M
+
+[**tidyverse**](https://ggplot2.tidyverse.org) ecosystem
+
+Slides created via [**R Mardown**](https://github.com/rstudio/rmarkdown) package
+and [**ioslides**](https://github.com/iosscripts/iosslider)
+
+Blog created with [**Jekyll**](https://jekyllrb.com/) 
+
+Hosted in [**GitHub**](https://github.com/)
+
+Using [*RStudio*](https://www.rstudio.com/) and [**blogdown**](https://bookdown.org/yihui/blogdown/) package  
+   
+plus some tweaks of the *Yihui Xie*`s [**blogdown-jekyll**](https://github.com/yihui/blogdown-jekyll) repository 
 

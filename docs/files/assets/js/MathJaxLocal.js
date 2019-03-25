@@ -55,4 +55,4 @@ MathJax.Hub.Config({
   }
 });
 
-MathJax.Ajax.loadComplete("{{ site.assets }}/js/MathJaxLocal.js");
+MathJax.Ajax.loadComplete('{{ "assets/js/MathJaxLocal.js" | absolute_url }}');
