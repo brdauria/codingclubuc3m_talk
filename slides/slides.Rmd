@@ -298,15 +298,14 @@ Jekyll is the engine behind GitHub Pages, which you can use to host sites right 
 
 - it may require to download and install a more recent version of [Ruby language](https://www.ruby-lang.org/en/downloads/)
 
-- assure to have run the command
+- assure to have run the command  
+
    ```bash
    bundle install
    ```
 
-### Example in class: 
-
-run `jekyll new . --force`
-in the blog's root folder
+- Example in class:   
+run `jekyll new . --force` in the project folder
 
 ## Make Jekyll the generator for blogdown
 
