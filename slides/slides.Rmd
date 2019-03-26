@@ -249,7 +249,7 @@ Then
 
 ## Make your FIRST post
 
-- Create the file `_posts/2019-03-01-HelloWorld.Rmd`  
+- Create the file `_posts/`[`2019-03-01-HelloWorld.Rmd`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-01-HelloWorld.Rmd)
 
   ````markdown
       ---
@@ -598,7 +598,7 @@ and it will be opened for modifications.
     $$ \int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2} $$
   ```
 
-you can download the file here [2019-03-15-hello-jekyll.md](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-15-hello-jekyll.md)
+you can download the file here [2019-03-15-hello-math.Rmd](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_posts/2019-03-15-hello-math.Rmd)
 
 - see immediatelt the preview in the **Viewer Pane**  
 
