@@ -13,7 +13,7 @@ copyright: "@2019 Bernardo D'Auria"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Quick links
+## Quick links  
 
 slides in [htlm version](slides_html.html)
 
