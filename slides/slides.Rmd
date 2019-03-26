@@ -1,14 +1,27 @@
 ---
 title: "Blogging with R"
-author: "Bernardo D'Auria"
+author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-output: ioslides_presentation
+# output: html_document
+output: 
+ ioslides_presentation:
+   logo: "uc3m-logo.png"
 copyright: "@2019 Bernardo D'Auria"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## Quick links
+
+slides in [htlm version](slides_html.html)
+
+online link to [these slides](https://brdauria.github.io/codingclubuc3m_talk)
+
+link to the slides' [GitHub repository](https://github.com/brdauria/codingclubuc3m_talk)
+
+link to the example [GitHub repository](https://github.com/brdauria/my_blog)
 
 ## What is a Blog?
 
