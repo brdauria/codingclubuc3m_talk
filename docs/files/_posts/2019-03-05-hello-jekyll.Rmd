@@ -19,4 +19,4 @@ ggplot(iris,aes(x=Sepal.Width,y=Sepal.Length)) + geom_point()
 
 and an external picture
 
-![colored cats](https://goo.gl/TRS6bL)
+![colored cats](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/images/cats.jpg)

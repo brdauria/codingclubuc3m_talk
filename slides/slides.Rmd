@@ -4,8 +4,8 @@ author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
 # output: html_document
 output: 
- ioslides_presentation:
-   logo: "images/uc3m-logo.png"
+  ioslides_presentation:
+    logo: "images/uc3m-logo.png"
 copyright: "@2019 Bernardo D'Auria"
 ---
 
@@ -389,7 +389,7 @@ and it will be opened for modifications.
   
   and an external picture
   
-  ![colored cats](https://goo.gl/TRS6bL)
+  ![colored cats](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/images/cats.jpg)
   
   ```
   ````
