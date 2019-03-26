@@ -2,7 +2,7 @@
 title: "Blogging with R"
 author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-# output: html_document
+#output: html_document
 output: 
   ioslides_presentation:
     logo: "images/uc3m-logo.png"
@@ -181,7 +181,7 @@ Then
 
 ## Configure for Jekyll on GitHub Pages
 
-- Set the file content `_config.yml` as follows
+- Set the file content [`_config.yml`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_config-v1.yml) as follows
 
   ```yaml
   title: My first blog
@@ -202,7 +202,7 @@ Then
   
 ## Configure for Jekyll on GitHub Pages
 
-- Create the file `Gemfile`
+- Create the file [`Gemfile`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/Gemfile-v1)
 
   ```yaml
   source "https://rubygems.org"
@@ -215,7 +215,7 @@ Then
   end
   ```
   
-- Add to `.gitignore`
+- Add to [`.gitignore`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/.gitignore-v1)
   ```bash
   _site/
   .sass-cache/
@@ -225,7 +225,7 @@ Then
 
 ## Add an `index.html` page
 
-- Create the file `index.Rmd`  
+- Create the file [`index.Rmd`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/index-v1.Rmd)
 
   ````md
      ---
@@ -655,7 +655,7 @@ We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minima
 
 ## Minimal Mistakes theme
 
-- add to `_config.yml` and this
+- add to [`_config.yml`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_config-MinimalMistakes.yml) and this
   ````yaml
       # Front Matter Defaults:
       defaults:

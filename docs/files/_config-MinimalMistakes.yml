@@ -1,0 +1,34 @@
+title: My first blog
+description: >- # this means to ignore newlines until "email:"
+  "This blog has been creatged during the mini-course 
+'Blogging with R' by Bernardo D'Auria on Tue March 26th, 2019"
+email: brdauria@gmail.com
+github_username: brdauria
+github: [metadata] # important to use remote_theme
+remote_theme: "mmistakes/minimal-mistakes@4.15.2"
+paginate: 5
+#theme: minima
+
+# Build settings
+markdown: kramdown
+exclude: ["*.Rmd"]
+plugins:
+  # - jekyll-feed # to serve posts
+  - jekyll-include-cache
+# - jekyll-paginate
+
+defaults:
+  - scope:
+  path: "assets/figures"
+values:
+  image: true
+- scope:
+  path: ""
+type: posts
+values:
+  layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
