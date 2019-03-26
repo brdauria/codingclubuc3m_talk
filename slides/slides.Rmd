@@ -5,7 +5,7 @@ date: "Tuesday March 26th, 2019"
 # output: html_document
 output: 
  ioslides_presentation:
-   logo: "uc3m-logo.png"
+   logo: "images/uc3m-logo.png"
 copyright: "@2019 Bernardo D'Auria"
 ---
 
@@ -298,6 +298,11 @@ Jekyll is the engine behind GitHub Pages, which you can use to host sites right 
 
 - it may require to download and install a more recent version of [Ruby language](https://www.ruby-lang.org/en/downloads/)
 
+- assure to have run the command
+   ```bash
+   bundle install
+   ```
+
 ### Example in class: 
 
 run `jekyll new . --force`
@@ -393,7 +398,7 @@ you can download the file here [2019-03-05-hello-jekyll.Rmd](https://raw.githubu
 
 ## Make your SECOND post
 
-- `build` and `serve your blog  
+- `build` and `serve` your blog  
   `Addins -> Serve Site` 
  
    and in the `Viewer Pane`  
