@@ -2,7 +2,7 @@
 title: "Blogging with R"
 author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-#output: html_document
+# output: html_document
 output: 
   ioslides_presentation:
     logo: "images/uc3m-logo.png"
@@ -623,7 +623,7 @@ We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minima
 
 ## Minimal Mistakes theme
 
-- remove `index.md` and write `index.html` as follows:
+- remove `index.md` and write [`index.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/index-MinimalMistakes.html)as follows:
   ````yaml
      ---
       layout: home
@@ -631,7 +631,7 @@ We are going to work with: [Minimal Mistakes](https://mmistakes.github.io/minima
      ---
   ````
 
-- add to `Gemfile`  
+- add to [`Gemfile`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/Gemfile-MinimalMistakes)  
   ````yaml
      group :jekyll_plugins do
       ...
