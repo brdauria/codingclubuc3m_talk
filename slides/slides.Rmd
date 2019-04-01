@@ -2,7 +2,7 @@
 title: "Blogging with R"
 author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-#output: html_document
+# output: html_document
 output: 
   ioslides_presentation:
     logo: "images/uc3m-logo.png"
@@ -508,7 +508,7 @@ So let us prepare our blog and make our **third post**!
 
 ## Customize the blog to allow <font color='red'>formulas</font>
 
-- in the folder `_include` create [`mathjax.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_includes/mathjax.html)
+- in the folder `_includes` create [`mathjax.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_includes/mathjax.html)
 
   ```html
   {% if layout.mathjax or page.mathjax %}
