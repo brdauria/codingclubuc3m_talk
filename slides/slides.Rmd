@@ -2,7 +2,7 @@
 title: "Blogging with R"
 author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-# output: html_document
+#output: html_document
 output: 
   ioslides_presentation:
     logo: "images/uc3m-logo.png"
@@ -533,7 +533,7 @@ So let us prepare our blog and make our **third post**!
   
 ## Customize the blog to allow <font color='red'>formulas</font>
 
-- in the folder `_layout` create [`mpost.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_layout/mpost.html)
+- in the folder `_layouts` create [`mpost.html`](https://raw.githubusercontent.com/brdauria/codingclubuc3m_talk/master/docs/files/_layouts/mpost.html)
 
   ```html
   ---
