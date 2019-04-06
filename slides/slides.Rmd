@@ -2,7 +2,7 @@
 title: "Blogging with R"
 author: "Bernardo D'Auria -- bernardo.dauria@uc3m.es"
 date: "Tuesday March 26th, 2019"
-#output: html_document
+# output: html_document
 output: 
   ioslides_presentation:
     logo: "images/uc3m-logo.png"
@@ -21,7 +21,7 @@ online link to [these slides](https://brdauria.github.io/codingclubuc3m_talk)
 
 link to the slides' [GitHub repository](https://github.com/brdauria/codingclubuc3m_talk)
 
-link to the example [GitHub repository](https://github.com/brdauria/my_blog)
+link to the example [GitHub repository](https://github.com/brdauria/codingclubuc3m_talk_blog)
 
 ## What is a Blog?
 
